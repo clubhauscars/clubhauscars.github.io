@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Haus Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--nero:#252525;
+--placebo:#E6E6E6;
+--white:#FFFFFF;
+--fur-white:#F3F2F0;
+--machine-gun-metal:#454545;
+--pale-cornflower:#B0CEE2;
+--dusk:#45586C;
+--shocking-orange:#E95D2C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Montserrat,sans-serif;background:var(--fur-white);color:var(--nero);}
+.site-header{
+position:sticky;top:0;z-index:1000;
+height:80px;background:var(--nero);
+display:flex;justify-content:space-between;align-items:center;
+padding:0 32px;
+}
+.site-logo img{height:48px;}
+.primary-navigation>ul{display:flex;align-items:center;gap:24px;list-style:none;}
+.primary-navigation a{color:white;text-decoration:none;font-size:14px;font-weight:500;}
+.dropdown{position:relative;}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:white;min-width:180px;box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;color:var(--nero);padding:12px 16px;}
+.nav-icon-button{background:none;border:none;color:white;font-size:20px;cursor:pointer;}
+.hero-section{
+height:calc(100vh - 80px);
+background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/hero-banner.jpg');
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;
+}
+.hero-content h1{
+font-family:'DM Serif Display',serif;
+font-size:clamp(5rem,12vw,10rem);
+color:white;font-weight:400;
+}
+.hero-button{
+display:inline-block;margin-top:20px;
+padding:14px 32px;background:var(--pale-cornflower);
+color:var(--nero);text-decoration:none;
+}
+.section-title{font-family:'DM Serif Display',serif;font-size:3rem;text-align:center;margin-bottom:40px;}
+.features-section,.about-section{padding:100px 8%;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.feature-card{background:white;padding:30px;border-radius:8px;}
+.feature-card h2{font-family:'DM Serif Display',serif;margin-bottom:12px;}
+.gallery-section{padding:100px 8%;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;}
+.about-section{text-align:center;background:white;}
+.site-footer{background:var(--nero);color:white;padding:40px;text-align:center;}
+@media(max-width:768px){
+.features-grid,.gallery-grid{grid-template-columns:1fr;}
+.hero-content h1{font-size:5rem;}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="site-logo"><img src="images/logo.png" alt="Club Haus Cars Logo"></div>
+<nav class="primary-navigation">
+<ul>
+<li class="dropdown"><a href="#prints">Prints</a>
+<ul class="dropdown-menu">
+<li><a href="#matte-prints">Matte Prints</a></li>
+<li><a href="#glossy-prints">Glossy Prints</a></li>
+</ul></li>
+<li><a href="#mouse-pads">Mouse Pads</a></li>
+<li><a href="#about-us">About Us</a></li>
+<li><button class="nav-icon-button">🔍</button></li>
+<li><button class="nav-icon-button">🛒</button></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="hero-section">
+<div class="hero-content">
+<h1>ClubHaus</h1>
+<a href="#about-us" class="hero-button">Our Story</a>
+</div>
+</section>
+<section class="features-section">
+<h2 class="section-title">Featured Collections</h2>
+<div class="features-grid">
+<article class="feature-card"><h2>Matte Prints</h2><p>Premium museum-quality automotive artwork.</p></article>
+<article class="feature-card"><h2>Glossy Prints</h2><p>High-impact colour and finish for standout displays.</p></article>
+<article class="feature-card"><h2>Mouse Pads</h2><p>Motorsport-inspired desk accessories.</p></article>
+</div>
+</section>
+<section class="gallery-section">
+<h2 class="section-title">Latest Arrivals</h2>
+<div class="gallery-grid">
+<figure class="gallery-item"><img src="images/gallery-1.jpg" alt="Gallery image placeholder"></figure>
+<figure class="gallery-item"><img src="images/gallery-2.jpg" alt="Gallery image placeholder"></figure>
+<figure class="gallery-item"><img src="images/gallery-3.jpg" alt="Gallery image placeholder"></figure>
+<figure class="gallery-item"><img src="images/gallery-4.jpg" alt="Gallery image placeholder"></figure>
+<figure class="gallery-item"><img src="images/gallery-5.jpg" alt="Gallery image placeholder"></figure>
+<figure class="gallery-item"><img src="images/gallery-6.jpg" alt="Gallery image placeholder"></figure>
+</div>
+</section>
+<section class="about-section" id="about-us">
+<h2 class="section-title">About Club Haus Cars</h2>
+<p>Automotive artwork and accessories inspired by car culture, community, and design.</p>
+</section>
+</main>
+<footer class="site-footer">
+<p>&copy; 2026 Club Haus Cars. All rights reserved.</p>
+</footer>
+</body>
+</html>
