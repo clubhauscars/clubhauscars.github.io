@@ -59,10 +59,77 @@ color:var(--nero);text-decoration:none;
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;}
 .about-section{text-align:center;background:white;}
-.site-footer{background:var(--nero);color:white;padding:40px;text-align:center;}
-@media(max-width:768px){
-.features-grid,.gallery-grid{grid-template-columns:1fr;}
-.hero-content h1{font-size:5rem;}
+.site-footer{
+    background:var(--nero);
+    color:var(--placebo);
+    padding:64px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1.5fr;
+    gap:48px;
+}
+
+.footer-column h3{
+    color:white;
+    margin-bottom:24px;
+}
+
+.footer-column p,
+.footer-column li{
+    color:var(--placebo);
+    margin-bottom:16px;
+}
+
+.footer-column ul{
+    list-style:none;
+}
+
+.footer-thanks{
+    font-family:'DM Serif Display',serif;
+    font-size:24px;
+    margin-top:48px;
+}
+
+.footer-newsletter{
+    background:var(--machine-gun-metal);
+    padding:32px;
+}
+
+.newsletter-form{
+    display:flex;
+    margin-top:24px;
+}
+
+.newsletter-form input{
+    flex:1;
+    padding:16px;
+    border:none;
+}
+
+.newsletter-form button{
+    width:60px;
+    border:none;
+    background:#A7A39C;
+    color:white;
+}
+
+.footer-divider{
+    height:1px;
+    background:#454545;
+    margin:48px 0;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer-policies,
+.footer-social{
+    display:flex;
+    gap:24px;
 }
 </style>
 </head>
@@ -115,7 +182,86 @@ color:var(--nero);text-decoration:none;
 </section>
 </main>
 <footer class="site-footer">
-<p>&copy; 2026 Club Haus Cars. All rights reserved.</p>
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+
+            <h3>
+                Produced by<br>
+                ClubHausCars®
+            </h3>
+
+            <p>
+                If you need any info that you can't find elsewhere,
+                contact me directly at:
+            </p>
+
+            <p>
+                info@clubhauscars.com
+            </p>
+
+            <p class="footer-thanks">
+                Thank you for stopping by our store!
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>We're here to help!</h3>
+
+            <ul>
+                <li>About Us</li>
+                <li>Size & Care Guide</li>
+                <li>FAQ</li>
+            </ul>
+
+        </div>
+
+        <div class="footer-column footer-newsletter">
+
+            <h3>Newsletter</h3>
+
+            <p>
+                Sign up to hear about our sales and events!
+            </p>
+
+            <form class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                >
+
+                <button type="submit">
+                    →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-policies">
+            <span>Terms</span>
+            <span>Privacy</span>
+            <span>Cookies</span>
+        </div>
+
+        <div class="footer-social">
+            <span>Discord</span>
+            <span>Facebook</span>
+            <span>Instagram</span>
+        </div>
+
+    </div>
+
 </footer>
 </body>
 </html>
