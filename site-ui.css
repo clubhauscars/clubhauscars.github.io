@@ -9,9 +9,14 @@
 
 .site-header .primary-navigation {
   position: relative;
+  margin-left: auto;
 }
 
 .nav-toggle-button {
+  display: none;
+}
+
+.mobile-nav-menu {
   display: none;
 }
 
@@ -524,6 +529,7 @@
     display: flex !important;
     align-items: center;
     gap: 10px !important;
+    justify-content: flex-end;
   }
 
   .primary-navigation > ul > .nav-menu-item {
