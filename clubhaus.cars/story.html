@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | ClubHausCars</title>
+<style>
+@font-face { font-family:'Montserrat'; src:url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'DM Serif Display'; src:url('fonts/DMSerifDisplay-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Liu Jian Mao Cao'; src:url('fonts/LiuJianMaoCao-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+:root{
+--nero:#252525;
+--placebo:#E6E6E6;
+--white:#FFFFFF;
+--fur-white:#F3F2F0;
+--machine-gun-metal:#454545;
+--pale-cornflower:#B0CEE2;
+--dusk:#45586C;
+--shocking-orange:#E95D2C;
+--roof-terracotta:#A63E1B;
+--ashlite:#A7A39C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--nero);min-height:100vh;display:flex;flex-direction:column;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;}
+.site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(37,37,37,0);transition:background .3s ease,backdrop-filter .3s ease;}
+.site-header.scrolled{background:rgba(37,37,37,0.88);backdrop-filter:blur(12px);}
+.site-header.scrolled .primary-navigation a,
+.site-header.scrolled .nav-icon-button{color:var(--white);}
+.site-header.scrolled .dropdown > a{color:var(--white);}
+.site-header.scrolled .dropdown-menu a{color:var(--nero);}
+.site-header.scrolled .dropdown-menu a:hover{color:var(--white);}
+.site-header.scrolled .nav-icon-button img{filter:invert(1);}
+.site-header.scrolled .site-logo:hover img{filter:brightness(0) saturate(100%) sepia(100%) hue-rotate(9deg) saturate(550%) contrast(0.95);}
+.site-logo img{height:48px;transition:filter .2s ease,opacity .2s ease;}
+.primary-navigation>ul{display:flex;align-items:center;gap:40px;list-style:none;}
+.primary-navigation a{color:var(--nero);text-decoration:none;font-size:16px;font-weight:600;letter-spacing:.01em;}
+.primary-navigation a:hover{color:var(--shocking-orange);}
+.dropdown{position:relative;}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:var(--placebo);min-width:220px;border:1px solid rgba(37,37,37,.08);border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.14);overflow:hidden;z-index:100;}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;color:var(--nero);padding:14px 18px;font-weight:600;transition:background .2s ease,color .2s ease;}
+.dropdown-menu a:hover{background:var(--dusk);color:var(--white);}
+.nav-icon-button{background:none;border:none;color:var(--nero);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.nav-icon-button img{display:block;height:26px;width:auto;transition:filter .3s ease,height .3s ease;}
+.story-hero{padding:118px 0 120px;background:linear-gradient(180deg,var(--fur-white) 0%,var(--placebo) 100%);}
+.story-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:44px;align-items:stretch;max-width:1360px;margin:0 auto;padding:0 32px;}
+.story-image{position:relative;min-height:680px;background:url('film%20images/film%2025.jpg') center 18%/cover no-repeat;border:1px solid rgba(69,88,108,.15);box-shadow:0 24px 60px rgba(37,37,37,.12);}
+.story-caption{position:absolute;left:0;right:0;bottom:0;padding:13px 18px;background:rgba(37,37,37,.62);color:var(--white);font-size:0.9rem;letter-spacing:0.02em;text-transform:uppercase;}
+.story-card{background:linear-gradient(180deg,var(--white) 0%,var(--fur-white) 100%);padding:56px 52px;box-shadow:0 24px 60px rgba(37,37,37,.11);border:1px solid rgba(69,88,108,.14);}
+.story-card h1{font-family:'DM Serif Display',serif;font-size:clamp(2.7rem,4.8vw,4.1rem);margin-bottom:22px;color:var(--nero);line-height:1.05;font-weight:400;}
+.story-card h1::after{content:'';display:block;width:110px;height:3px;background:var(--shocking-orange);margin-top:16px;}
+.story-card p{color:var(--machine-gun-metal);font-size:1.03rem;line-height:1.84;margin-bottom:20px;font-weight:400;}
+.story-card p:last-child{margin-bottom:0;}
+.story-card strong{font-weight:700;}
+.page-content{max-width:980px;width:100%;margin:0 auto;padding:0 24px 96px;}
+.page-content h2{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);margin-bottom:24px;color:var(--nero);}
+.page-content p{color:var(--machine-gun-metal);font-size:1rem;line-height:1.9;margin-bottom:24px;}
+.page-content strong{font-weight:700;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;font-family:'Montserrat',sans-serif;}
+@media (max-width: 980px){.story-grid{grid-template-columns:1fr;gap:32px;padding:0 20px;}.story-image{min-height:440px;}.story-card{padding:40px 30px;}}
+.footer-container{display:grid;grid-template-columns:2.5fr 1fr 3fr;gap:48px;}
+.footer-column h3{color:white;margin-bottom:24px;font-size:1.2rem;line-height:1.4;}
+.footer-column:first-child h3{font-size:3rem;line-height:1.05;margin-bottom:24px;}
+.footer-column p,.footer-column li{color:var(--placebo);margin-bottom:16px;}
+.footer-column a{color:var(--placebo);text-decoration:none;}
+.footer-column a:hover{color:var(--shocking-orange);}
+.footer-column ul{list-style:none;padding:0;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.footer-newsletter{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:40px 36px;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16);width:100%;}
+.footer-newsletter h3{font-size:1.4rem;margin-bottom:18px;}
+.footer-newsletter p{color:rgba(255,255,255,.85);font-size:0.98rem;line-height:1.8;margin-bottom:28px;}
+.newsletter-form{display:flex;gap:0;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);border-right:0;background:var(--white);color:var(--nero);}
+.newsletter-form input::placeholder{color:var(--machine-gun-metal);}
+.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;border-left:1px solid rgba(255,255,255,.18);}
+.newsletter-form button:hover{background:rgba(255,255,255,.34);transform:translateY(-1px);}
+.footer-divider{height:1px;background:rgba(255,255,255,.12);margin:56px 0;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-policies,.footer-social{display:flex;gap:34px;align-items:center;}
+.footer-policies a{transition:color .2s ease;}
+.footer-policies a:hover{color:var(--shocking-orange);}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;}
+.footer-social img{width:40px;height:40px;display:block;}
+.footer-social a:nth-child(2) img{width:36px;height:36px;}
+.footer-social a:nth-child(3) img{width:44px;height:44px;}
+@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.page-content{padding:48px 20px 80px;}.footer-container{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;align-items:flex-start;}.footer-policies{gap:20px;}}
+</style>
+<link rel="stylesheet" href="site-ui.css">
+</head>
+<body>
+<header class="site-header">
+<div class="site-logo"><a href="index.html"><img src="film%20images/Logo%20Black.svg" alt="Club Haus Cars Logo"></a></div>
+<nav class="primary-navigation">
+<ul>
+<li class="dropdown"><a href="shop.html">Prints</a>
+<ul class="dropdown-menu">
+<li><a href="shop.html">Glossy Prints</a></li>
+<li><a href="shop.html">Matte Prints</a></li>
+</ul>
+</li>
+<li><a href="story.html">About Us</a></li>
+<li><button class="nav-icon-button" aria-label="Search"><img src="film%20images/Magnifiying%20Glass%20icon.svg" alt="Search"></button></li>
+<li><button class="nav-icon-button" aria-label="Cart"><img src="film%20images/Shopping%20Cart%20Icon.svg" alt="Cart"></button></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="story-hero">
+<div class="story-grid">
+<div class="story-image"><div class="story-caption">Wekfest Seattle 2024 w/ Jonah's S15</div></div>
+<div class="story-card">
+<h1>Who runs ClubHausCars?</h1>
+<p>Hi, I'm Kalisa, the sole owner and operator of ClubHausCars. I photograph and manufacture the vast majority of the products myself as well as handling all of our order fulfillment, administrative work, media, communications, and...everything else.</p>
+<p>In 2026, after 3 years of taking film photography, I launched the ClubHausCars print shop as a way to bring my photography to life and connect with the automotive community across Canada.</p>
+<p>Now based in Australia, I'm excited to keep growing ClubHaus and help bring a piece of that community here too.</p>
+<p>Thanks for being here, and welcome to the ClubHaus.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-column">
+<h3>Produced by<br>ClubHausCars®</h3>
+<p>If you need any info that you can't find elsewhere, contact me directly at:</p>
+<p>info@clubhauscars.com</p>
+<p class="footer-thanks">Thank you for stopping by our store!</p>
+</div>
+<div class="footer-column">
+<h3>We're here to help!</h3>
+<ul>
+<li><a href="story.html">About Us</a></li>
+<li><a class="size-care-link" href="size-care-guide.html">Size &amp; Care Guide</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column footer-newsletter">
+<h3>Newsletter</h3>
+<p>Sign up to hear about our sales and events!</p>
+<form class="newsletter-form">
+<input type="email" placeholder="Your Email">
+<button type="submit">→</button>
+</form>
+<div id="newsletter-message" class="newsletter-message" aria-live="polite"></div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+<div class="footer-policies">
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy Policy</a>
+</div>
+<div class="footer-social">
+<a href="#"><img src="film%20images/discord%20icon.svg" alt="Discord"></a>
+<a href="#"><img src="film%20images/facebook%20icon.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/clubhauscars/" target="_blank" rel="noreferrer"><img src="film%20images/instagram%20icon.svg" alt="Instagram"></a>
+</div>
+</div>
+</footer>
+<script src="site-ui.js"></script>
+<script>
+const header = document.querySelector('.site-header');
+const logo = document.querySelector('.site-logo img');
+window.addEventListener('scroll', () => {
+  const isScrolled = window.scrollY > 20;
+  header.classList.toggle('scrolled', isScrolled);
+  if (logo) {
+    logo.src = isScrolled ? 'film%20images/Logo%20White.svg' : 'film%20images/Logo%20Black.svg';
+  }
+});
+</script>
+</body>
+</html>

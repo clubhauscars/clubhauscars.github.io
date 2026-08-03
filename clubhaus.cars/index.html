@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Haus Cars</title>
+<style>
+@font-face { font-family:'Montserrat'; src:url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'DM Serif Display'; src:url('fonts/DMSerifDisplay-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Liu Jian Mao Cao'; src:url('fonts/LiuJianMaoCao-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+:root{
+--nero:#252525;
+--placebo:#E6E6E6;
+--white:#FFFFFF;
+--fur-white:#F3F2F0;
+--machine-gun-metal:#454545;
+--pale-cornflower:#B0CEE2;
+--dusk:#45586C;
+--shocking-orange:#E95D2C;
+--roof-terracotta:#A63E1B;
+--ashlite:#A7A39C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--nero);min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;}
+.site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(37,37,37,0);transition:background .3s ease,backdrop-filter .3s ease;}
+.site-header.scrolled{background:rgba(37,37,37,0.88);backdrop-filter:blur(12px);}
+.site-logo img{height:48px;transition:opacity .2s ease;}
+.primary-navigation>ul{display:flex;align-items:center;gap:40px;list-style:none;}
+.primary-navigation a{color:var(--nero);text-decoration:none;font-size:16px;font-weight:600;letter-spacing:.01em;}
+.primary-navigation a:hover{color:var(--shocking-orange);}
+.dropdown{position:relative;}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:var(--placebo);min-width:220px;border:1px solid rgba(37,37,37,.08);border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.14);overflow:hidden;z-index:100;}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;color:var(--nero);padding:14px 18px;font-weight:600;transition:background .2s ease,color .2s ease;}
+.dropdown-menu a:hover{background:var(--dusk);color:var(--white);}
+.nav-icon-button{background:none;border:none;color:var(--nero);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.nav-icon-button img{display:block;height:26px;width:auto;transition:filter .3s ease,height .3s ease;}
+.site-header.scrolled .primary-navigation a,
+.site-header.scrolled .nav-icon-button{color:var(--white);}
+.site-header.scrolled .dropdown > a{color:var(--white);}
+.site-header.scrolled .dropdown-menu a{color:var(--nero);}
+.site-header.scrolled .dropdown-menu a:hover{color:var(--white);}
+.site-header.scrolled .nav-icon-button img{filter:invert(1);}
+.site-header.scrolled .site-logo:hover img{filter:brightness(0) saturate(100%) sepia(100%) hue-rotate(9deg) saturate(550%) contrast(0.95);}
+.hero-section{height:calc(100vh - 80px);background:url('film%20images/film%2014.PNG');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px;}
+.hero-content h1{font-family:'Liu Jian Mao Cao',cursive;font-size:350px;color:var(--white);font-weight:400;line-height:0.9;margin-bottom:18px;text-shadow:-3px -3px 0 var(--shocking-orange),3px -3px 0 var(--shocking-orange),-3px 3px 0 var(--shocking-orange),3px 3px 0 var(--shocking-orange);-webkit-text-stroke:0;text-stroke:0;}
+.hero-button{display:inline-block;margin-top:20px;padding:16px 36px;background:var(--pale-cornflower);color:var(--nero);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;border:2px solid var(--dusk);border-radius:0;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
+.hero-button:hover{background:var(--shocking-orange);border-color:var(--roof-terracotta);color:var(--white);transform:translateY(-1px);}
+.section-title{font-family:'DM Serif Display',serif;font-size:3rem;text-align:center;margin-bottom:40px;}
+.events-title{font-family:'Liu Jian Mao Cao',cursive;font-size:350px;font-weight:400;color:var(--white);-webkit-text-stroke:4px var(--shocking-orange);text-stroke:4px var(--shocking-orange);}
+.faq-section{padding:100px 8%;background:var(--white);}
+.faq-container{max-width:1040px;margin:0 auto;text-align:center;background:transparent;padding:0;box-shadow:none;border-radius:0;}
+.faq-description{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 10px;max-width:720px;font-weight:400;text-align:center;}
+.faq-time{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 40px;max-width:720px;font-weight:400;text-align:center;}
+.faq-list{background:var(--placebo);border:1px solid var(--placebo);border-radius:0;overflow:hidden;}
+.faq-item{appearance:none;-webkit-appearance:none;border:0;background:transparent;width:100%;text-align:left;padding:24px 26px;color:var(--nero);font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:400;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-bottom:1px solid rgba(0,0,0,0.06);}
+.faq-item:hover{background:var(--placebo);}
+.faq-item span{font-size:1.4rem;color:var(--nero);transition:transform .2s ease;}
+.faq-item:focus{outline:2px solid var(--pale-cornflower);outline-offset:2px;border-radius:2px;}
+.faq-panel{display:none;text-align:left;padding:18px 26px 26px;margin:0;background:var(--placebo);color:var(--machine-gun-metal);font-family:'Montserrat',sans-serif;font-size:1rem;line-height:1.8;}
+.faq-item[aria-expanded="true"] span{transform:rotate(180deg);} 
+/* spacing for FAQ content paragraphs */
+.faq-panel p{margin:0 0 18px;}
+.faq-panel h4{margin-top:22px;margin-bottom:8px;}
+.newsletter-message{margin-top:18px;color:var(--pale-cornflower);font-weight:700}
+.shop-divider{background:rgba(37,37,37,.92);padding:24px 20px;}
+.shop-divider .section-title{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--white);margin:0;transition:color .2s ease;}
+.shop-divider .section-title:hover{color:var(--shocking-orange);}
+.shop-divider .section-title::after{display:none;}
+.shop-section{padding:80px 4% 100px;}
+.features-section,.about-section{padding:100px 8%;}
+.primary-navigation a,.dropdown-menu a{font-family:'Montserrat',sans-serif;font-size:16px;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;font-family:'Montserrat',sans-serif;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.gallery-item{position:relative;overflow:hidden;border-radius:0;}
+.gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;transition:filter .25s ease,transform .25s ease;}
+.gallery-item::after{content:'View';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'DM Serif Display',serif;font-size:1.2rem;opacity:0;transition:opacity .25s ease,transform .25s ease;background:rgba(0,0,0,0.15);}
+.gallery-item:hover img{filter:brightness(0.9);transform:scale(1.02);}
+.gallery-item:hover::after{opacity:1;transform:translateY(-2px);}
+.shop-section .gallery-item::after{content:'';}
+.shop-section .gallery-item:hover::after{opacity:0;}
+.features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;}
+.feature-card{background:var(--white);padding:30px;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.08);}
+.feature-card h2{font-family:'DM Serif Display',serif;margin-bottom:12px;}
+.gallery-section{padding:100px 8%;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;}
+.about-section{text-align:center;background:var(--white);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.12);padding:80px 50px;}
+.about-section p{max-width:700px;margin:0 auto;color:var(--machine-gun-metal);font-size:1.03rem;line-height:1.8;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;}
+.footer-container{display:grid;grid-template-columns:2.5fr 1fr 3fr;gap:48px;}
+.footer-column h3{color:white;margin-bottom:24px;font-size:1.2rem;line-height:1.4;}
+.footer-column:first-child h3{font-size:3rem;line-height:1.05;margin-bottom:24px;}
+.footer-column p,.footer-column li{color:var(--placebo);margin-bottom:16px;}
+.footer-column a{color:var(--placebo);text-decoration:none;}
+.footer-column a:hover{color:var(--shocking-orange);}
+.footer-column ul{list-style:none;padding:0;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.footer-newsletter{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:40px 36px;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16);width:100%;}
+.footer-newsletter h3{font-size:1.4rem;margin-bottom:18px;}
+.footer-newsletter p{color:rgba(255,255,255,.85);font-size:0.98rem;line-height:1.8;margin-bottom:28px;}
+.newsletter-form{display:flex;gap:0;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);border-right:0;background:var(--white);color:var(--nero);}
+.newsletter-form input::placeholder{color:var(--machine-gun-metal);}
+.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;border-left:1px solid rgba(255,255,255,.18);}
+.newsletter-form button:hover{background:rgba(255,255,255,.34);transform:translateY(-1px);}
+.footer-divider{height:1px;background:rgba(255,255,255,.12);margin:56px 0;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-policies,.footer-social{display:flex;gap:34px;align-items:center;}
+.footer-policies a{transition:color .2s ease;}
+.footer-policies a:hover{color:var(--shocking-orange);}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;}
+.footer-social img{width:40px;height:40px;display:block;}
+.footer-social a:nth-child(2) img{width:36px;height:36px;}
+.footer-social a:nth-child(3) img{width:44px;height:44px;}
+@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.features-grid,.gallery-grid{grid-template-columns:1fr;}.features-section,.about-section,.gallery-section{padding:60px 6%;}.hero-content .home-hero-title{font-size:clamp(5rem,24vw,6.5rem);}.hero-content h1:not(.home-hero-title){font-size:clamp(3.6rem,15vw,6rem);}}
+</style>
+<link rel="stylesheet" href="site-ui.css">
+</head>
+<body>
+<header class="site-header">
+<div class="site-logo"><img src="film%20images/Logo%20Black.svg" alt="Club Haus Cars Logo"></div>
+<nav class="primary-navigation">
+<ul>
+<li class="dropdown"><a href="shop.html">Prints</a>
+<ul class="dropdown-menu">
+<li><a href="shop.html">Glossy Prints</a></li>
+<li><a href="shop.html">Matte Prints</a></li>
+</ul>
+</li>
+<li><a href="story.html">About Us</a></li>
+<li><button class="nav-icon-button" aria-label="Search"><img src="film%20images/Magnifiying%20Glass%20icon.svg" alt="Search"></button></li>
+<li><button class="nav-icon-button" aria-label="Cart"><img src="film%20images/Shopping%20Cart%20Icon.svg" alt="Cart"></button></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="hero-section">
+<div class="hero-content">
+<h1 class="home-hero-title">ClubHaus</h1>
+<a href="story.html" class="hero-button">Our Story</a>
+</div>
+</section>
+<section class="shop-divider">
+<h2 class="section-title"><a href="shop.html">SHOP ALL PRINTS</a></h2>
+</section>
+<section class="shop-section">
+<div class="gallery-grid">
+<figure class="gallery-item"><img src="film%20images/film%2010.jpg" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2011.jpg" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2012.PNG" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2013.PNG" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2015.jpg" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2016.JPG" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2017.jpg" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2018.jpg" alt="Shop item"></figure>
+<figure class="gallery-item"><img src="film%20images/film%2020.jpg" alt="Shop item"></figure>
+</div>
+</section>
+<section class="events-section" id="events">
+<div class="hero-section" style="background:url('film%20images/digital%201.jpg');background-size:cover;background-position:center;">
+<div class="hero-content">
+<h2 class="section-title events-title">Events</h2>
+<a href="book-event.html" class="hero-button">Book me for an event</a>
+</div>
+</div>
+</section>
+<section class="faq-section" id="faq">
+<div class="faq-container">
+<h2 class="section-title">FAQ</h2>
+<p class="faq-description">Our customer support is available Monday to Friday 6:00am to 7:00pm.</p>
+<p class="faq-time">Average Answer Time: 24 hours</p>
+<div class="faq-list" role="list">
+  <button class="faq-item" id="faq1-header" aria-expanded="false" aria-controls="faq1">Do You Ship Overseas?<span aria-hidden="true">›</span></button>
+  <div id="faq1" class="faq-panel" role="region" aria-labelledby="faq1-header">
+    <p>Yes, we offer worldwide shipping. Shipping costs will apply and will be added at checkout. We offer free shipping worldwide for orders over $100.00 CAD.</p>
+  </div>
+
+  <button class="faq-item" id="faq2-header" aria-expanded="false" aria-controls="faq2">How Long Will My Orders Take?<span aria-hidden="true">›</span></button>
+  <div id="faq2" class="faq-panel" role="region" aria-labelledby="faq2-header">
+    <p>It takes 1-2 days for us to process and ship, however deliveries vary depending on where you are. Overseas deliveries can take anywhere from 7-16 business days. Delivery details will be provided in your confirmation email. There are shipping delays during the holidays.</p>
+  </div>
+
+  <button class="faq-item" id="faq3-header" aria-expanded="false" aria-controls="faq3">Shipping Policy<span aria-hidden="true">›</span></button>
+  <div id="faq3" class="faq-panel" role="region" aria-labelledby="faq3-header">
+    <p><strong>Within Canada:</strong> Orders can be shipped with standard letter mail; additional shipping upgrades can be purchased with tracking/insurance. I am not responsible for lost or damaged parcels shipped without tracking.</p>
+    <p><strong>To the U.S. / International:</strong> Orders can be shipped with standard letter mail; additional shipping upgrades can be purchased with tracking/insurance. I am not responsible for lost or damaged parcels shipped without tracking.</p>
+  </div>
+
+  <button class="faq-item" id="faq4-header" aria-expanded="false" aria-controls="faq4">Refunds & Return Policy<span aria-hidden="true">›</span></button>
+  <div id="faq4" class="faq-panel" role="region" aria-labelledby="faq4-header">
+    <p>We have a 10-day return policy, which means you have 10 days after receiving your item to request a return.</p>
+
+    <p>To be eligible for a return, your item must be in the same condition that you received it, unused, with tags, and in its original packaging. You’ll also need the receipt or proof of purchase.<br></p>
+
+    <p>To start a return, you can contact us at <a href="mailto:clubhauscars@gmail.com">clubhauscars@gmail.com</a>.<br></p>
+
+    <p>If your return is accepted, we’ll send you a return shipping label, as well as instructions on how and where to send your package. Items sent back to us without first requesting a return will not be accepted. Please note we do not offer free returns. Return postage is at the buyer's expense.</p>
+
+    <p>You can always contact us for any return question at clubhauscars@gmail.com.</p>
+
+    <h4>Damages and issues</h4>
+    <p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged or if you receive the wrong item, so that we can evaluate the issue and make it right.</p>
+
+    <p>Unfortunately, we cannot accept returns on sale items or gift cards.</p>
+
+    <h4>Exchanges</h4>
+    <p>The fastest way to ensure you get what you want is to return the item you have, and once the return is accepted, make a separate purchase for the new item.</p>
+
+    <h4>European Union 14 day cooling off period</h4>
+    <p>Notwithstanding the above, if the merchandise is being shipped into the European Union, you have the right to cancel or return your order within 14 days, for any reason and without a justification. As above, your item must be in the same condition that you received it, unused, with tags, and in its original packaging. You’ll also need the receipt or proof of purchase.</p>
+
+    <h4>Refunds</h4>
+    <p>We will notify you once we’ve received and inspected your return, and let you know if the refund was approved or not. If approved, you’ll be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund too. If more than 15 business days have passed since we’ve approved your return, please contact us at clubhauscars@gmail.com.</p>
+  </div>
+
+  
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-column">
+<h3>Produced by<br>ClubHausCars®</h3>
+<p>If you need any info that you can't find elsewhere, contact me directly at:</p>
+<p>info@clubhauscars.com</p>
+<p class="footer-thanks">Thank you for stopping by our store!</p>
+</div>
+<div class="footer-column">
+<h3>We're here to help!</h3>
+<ul>
+<li><a href="story.html">About Us</a></li>
+<li><a class="size-care-link" href="size-care-guide.html">Size &amp; Care Guide</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column footer-newsletter">
+<h3>Newsletter</h3>
+<p>Sign up to hear about our sales and events!</p>
+<form class="newsletter-form">
+<input type="email" placeholder="Your Email">
+<button type="submit">→</button>
+</form>
+<div id="newsletter-message" class="newsletter-message" aria-live="polite"></div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+<div class="footer-policies">
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy Policy</a>
+</div>
+<div class="footer-social">
+<a href="#"><img src="film%20images/discord%20icon.svg" alt="Discord"></a>
+<a href="#"><img src="film%20images/facebook%20icon.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/clubhauscars/" target="_blank" rel="noreferrer"><img src="film%20images/instagram%20icon.svg" alt="Instagram"></a>
+</div>
+</div>
+</footer>
+<script src="site-ui.js"></script>
+<script>
+const header = document.querySelector('.site-header');
+const logo = document.querySelector('.site-logo img');
+window.addEventListener('scroll', () => {
+  const isScrolled = window.scrollY > 20;
+  header.classList.toggle('scrolled', isScrolled);
+  logo.src = isScrolled ? 'film%20images/Logo%20White.svg' : 'film%20images/Logo%20Black.svg';
+});
+
+// FAQ accordion behavior (only one open at a time)
+const faqButtons = document.querySelectorAll('.faq-item');
+faqButtons.forEach(button => {
+  const panel = document.getElementById(button.getAttribute('aria-controls'));
+  if (!panel) return;
+  // ensure panels are hidden at start
+  panel.style.display = 'none';
+
+  button.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    // close all
+    faqButtons.forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const p = document.getElementById(btn.getAttribute('aria-controls'));
+      if (p) p.style.display = 'none';
+    });
+    // open if it was closed
+    if (!isOpen) {
+      button.setAttribute('aria-expanded', 'true');
+      panel.style.display = 'block';
+    }
+  });
+
+  // keyboard support
+  button.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); button.click(); }
+  });
+});
+
+// newsletter submit handler
+const newsletterForm = document.querySelector('.newsletter-form');
+const newsletterMessage = document.getElementById('newsletter-message');
+if (newsletterForm && newsletterMessage) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = newsletterForm.querySelector('input[type="email"]');
+    const email = input ? input.value.trim() : '';
+    if (email) {
+      newsletterMessage.textContent = 'Thanks for subscribing!';
+      input.value = '';
+    } else {
+      newsletterMessage.textContent = 'Please enter a valid email.';
+    }
+  });
+}
+
+</script>
+</body>
+</html>
