@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ClubHausCars</title>
+<style>
+@font-face { font-family:'Montserrat'; src:url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'DM Serif Display'; src:url('fonts/DMSerifDisplay-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Liu Jian Mao Cao'; src:url('fonts/LiuJianMaoCao-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+:root{
+--nero:#252525;
+--placebo:#E6E6E6;
+--white:#FFFFFF;
+--fur-white:#F3F2F0;
+--machine-gun-metal:#454545;
+--pale-cornflower:#B0CEE2;
+--dusk:#45586C;
+--shocking-orange:#E95D2C;
+--roof-terracotta:#A63E1B;
+--ashlite:#A7A39C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--nero);min-height:100vh;display:flex;flex-direction:column;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;}
+.site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(37,37,37,0);transition:background .3s ease,backdrop-filter .3s ease;}
+.site-header.scrolled{background:rgba(37,37,37,0.88);backdrop-filter:blur(12px);}
+.site-logo img{height:48px;transition:opacity .2s ease;}
+.primary-navigation>ul{display:flex;align-items:center;gap:40px;list-style:none;}
+.primary-navigation a{color:var(--nero);text-decoration:none;font-size:16px;font-weight:600;letter-spacing:.01em;}
+.primary-navigation a:hover{color:var(--shocking-orange);}
+.dropdown{position:relative;}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:var(--placebo);min-width:220px;border:1px solid rgba(37,37,37,.08);border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.14);overflow:hidden;z-index:100;}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;color:var(--nero);padding:14px 18px;font-weight:600;transition:background .2s ease,color .2s ease;}
+.dropdown-menu a:hover{background:var(--dusk);color:var(--white);}
+.nav-icon-button{background:none;border:none;color:var(--nero);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.nav-icon-button img{display:block;height:26px;width:auto;transition:filter .3s ease,height .3s ease;}
+.site-header.scrolled .primary-navigation a,
+.site-header.scrolled .nav-icon-button{color:var(--white);}
+.site-header.scrolled .dropdown > a{color:var(--white);}
+.site-header.scrolled .dropdown-menu a{color:var(--nero);}
+.site-header.scrolled .dropdown-menu a:hover{color:var(--white);}
+.site-header.scrolled .nav-icon-button img{filter:invert(1);}
+.site-header.scrolled .site-logo:hover img{filter:brightness(0) saturate(100%) sepia(100%) hue-rotate(9deg) saturate(550%) contrast(0.95);}
+.hero-section{height:calc(100vh - 80px);background:url('film%20images/film%2014.PNG');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px;}
+.hero-content h1{font-family:'Liu Jian Mao Cao',cursive;font-size:350px;color:var(--white);font-weight:400;line-height:0.9;margin-bottom:18px;text-shadow:-3px -3px 0 var(--shocking-orange),3px -3px 0 var(--shocking-orange),-3px 3px 0 var(--shocking-orange),3px 3px 0 var(--shocking-orange);-webkit-text-stroke:0;text-stroke:0;}
+.hero-button{display:inline-block;margin-top:20px;padding:16px 36px;background:var(--pale-cornflower);color:var(--nero);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;border:2px solid var(--dusk);border-radius:0;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
+.hero-button:hover{background:var(--shocking-orange);border-color:var(--roof-terracotta);color:var(--white);transform:translateY(-1px);}
+.section-title{font-family:'DM Serif Display',serif;font-size:3rem;text-align:center;margin-bottom:40px;}
+.events-title{font-family:'Liu Jian Mao Cao',cursive;font-size:350px;font-weight:400;color:var(--white);-webkit-text-stroke:4px var(--shocking-orange);text-stroke:4px var(--shocking-orange);}
+.faq-section{padding:100px 8%;background:var(--white);}
+.faq-container{max-width:1040px;margin:0 auto;text-align:center;background:transparent;padding:0;box-shadow:none;border-radius:0;}
+.faq-description{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 10px;max-width:720px;font-weight:400;text-align:center;}
+.faq-time{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 40px;max-width:720px;font-weight:400;text-align:center;}
+.faq-list{background:var(--placebo);border:1px solid var(--placebo);border-radius:0;overflow:hidden;}
+.faq-item{appearance:none;-webkit-appearance:none;border:0;background:transparent;width:100%;text-align:left;padding:24px 26px;color:var(--nero);font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-bottom:1px solid rgba(0,0,0,0.06);}
+.faq-item:hover{background:var(--placebo);}
+.faq-item span{font-size:1.4rem;color:var(--nero);transition:transform .2s ease;}
+.faq-item:focus{outline:2px solid var(--pale-cornflower);outline-offset:2px;border-radius:2px;}
+.faq-panel{display:none;text-align:left;padding:18px 26px 26px;margin:0;background:var(--placebo);color:var(--machine-gun-metal);font-family:'Montserrat',sans-serif;font-size:1rem;line-height:1.8;}
+.faq-item[aria-expanded="true"] span{transform:rotate(180deg);} 
+/* spacing for FAQ content paragraphs */
+.faq-panel p{margin:0 0 18px;}
+.faq-panel h4{margin-top:22px;margin-bottom:8px;}
+.newsletter-message{margin-top:18px;color:var(--pale-cornflower);font-weight:700}
+.shop-divider{background-image:url('./film images/gradient.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;padding:24px 20px;}
+.shop-divider .section-title{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--white);margin:0;text-transform:uppercase;transition:color .2s ease;}
+.shop-divider .section-title:hover{color:var(--pale-cornflower);}
+.shop-divider .section-title::after{display:none;}
+.shop-section{padding:80px 4% 100px;}
+.features-section,.about-section{padding:100px 8%;}
+.primary-navigation a,.dropdown-menu a{font-family:'Montserrat',sans-serif;font-size:16px;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;font-family:'Montserrat',sans-serif;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.gallery-item{position:relative;overflow:hidden;border-radius:0;}
+.gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;transition:filter .25s ease,transform .25s ease;}
+.gallery-item::after{content:'View';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'DM Serif Display',serif;font-size:1.2rem;opacity:0;transition:opacity .25s ease,transform .25s ease;background:rgba(0,0,0,0.15);}
+.gallery-item:hover img{filter:brightness(0.9);transform:scale(1.02);}
+.gallery-item:hover::after{opacity:1;transform:translateY(-2px);}
+.features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;}
+.feature-card{background:var(--white);padding:30px;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.08);}
+.feature-card h2{font-family:'DM Serif Display',serif;margin-bottom:12px;}
+.gallery-section{padding:100px 8%;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.gallery-item img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;}
+.about-section{text-align:center;background:var(--white);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.12);padding:80px 50px;}
+.about-section p{max-width:700px;margin:0 auto;color:var(--machine-gun-metal);font-size:1.03rem;line-height:1.8;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;}
+.footer-container{display:grid;grid-template-columns:2.5fr 1fr 3fr;gap:48px;}
+.footer-column h3{color:white;margin-bottom:24px;font-size:1.2rem;line-height:1.4;}
+.footer-column:first-child h3{font-size:3rem;line-height:1.05;margin-bottom:24px;}
+.footer-column p,.footer-column li{color:var(--placebo);margin-bottom:16px;}
+.footer-column a{color:var(--placebo);text-decoration:none;}
+.footer-column a:hover{color:var(--shocking-orange);}
+.footer-column ul{list-style:none;padding:0;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.footer-newsletter{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:40px 36px;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16);width:100%;}
+.footer-newsletter h3{font-size:1.4rem;margin-bottom:18px;}
+.footer-newsletter p{color:rgba(255,255,255,.85);font-size:0.98rem;line-height:1.8;margin-bottom:28px;}
+.newsletter-form{display:flex;gap:0;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);border-right:0;background:var(--white);color:var(--nero);}
+.newsletter-form input::placeholder{color:var(--machine-gun-metal);}
+.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;border-left:1px solid rgba(255,255,255,.18);}
+.newsletter-form button:hover{background:rgba(255,255,255,.34);transform:translateY(-1px);}
+.footer-divider{height:1px;background:rgba(255,255,255,.12);margin:56px 0;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-policies,.footer-social{display:flex;gap:34px;align-items:center;}
+.footer-policies a{transition:color .2s ease;}
+.footer-policies a:hover{color:var(--shocking-orange);}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;}
+.footer-social img{width:40px;height:40px;display:block;}
+.footer-social a:nth-child(2) img{width:36px;height:36px;}
+.footer-social a:nth-child(3) img{width:44px;height:44px;}
+@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.features-grid,.gallery-grid{grid-template-columns:1fr;}.features-section,.about-section,.gallery-section{padding:60px 6%;}.hero-content h1{font-size:clamp(3.6rem,15vw,6rem);}}
+
+/* privacy page specific */
+.privacy-page-content{max-width:1080px;margin:0 auto;padding:74px 24px 108px;background:transparent;}
+.privacy-page-content h1{font-family:'DM Serif Display',serif;font-size:clamp(34px,6vw,60px);margin-bottom:14px;color:var(--nero);line-height:1.02;font-weight:400;font-style:normal;letter-spacing:.01em;}
+.privacy-page-content h1::after{content:'';display:block;width:128px;height:3px;background:var(--shocking-orange);margin-top:18px;}
+.privacy-page-content .page-intro{display:inline-block;color:var(--white);background:var(--dusk);padding:8px 14px;margin-bottom:30px;font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.01em;}
+.privacy-page-content .policy-section{margin-bottom:22px;background:linear-gradient(180deg,var(--fur-white) 0%,var(--placebo) 100%);padding:26px 28px;border-left:4px solid var(--ashlite);border:1px solid rgba(69,88,108,.16);color:var(--machine-gun-metal);font-family:'Montserrat',sans-serif;box-shadow:0 10px 24px rgba(37,37,37,.08);} 
+.privacy-page-content .policy-section h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:12px;color:var(--roof-terracotta);font-weight:400;font-style:normal;}
+.privacy-page-content .policy-section p{margin-bottom:12px;color:var(--nero);line-height:1.82;font-size:1rem;}
+.privacy-page-content .policy-section p:last-child{margin-bottom:0;}
+.privacy-page-content a{color:var(--shocking-orange);text-decoration:underline;text-underline-offset:2px;}
+@media (max-width: 840px){
+  .privacy-page-content{padding:52px 20px 82px;}
+  .privacy-page-content .policy-section{padding:22px 20px;}
+}
+</style>
+<link rel="stylesheet" href="site-ui.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-logo"><a href="index.html"><img src="film%20images/Logo%20Black.svg" alt="Club Haus Cars Logo"></a></div>
+  <nav class="primary-navigation">
+    <ul>
+      <li class="dropdown"><a href="shop.html">Prints</a>
+        <ul class="dropdown-menu">
+          <li><a href="shop.html">Glossy Prints</a></li>
+          <li><a href="shop.html">Matte Prints</a></li>
+        </ul>
+      </li>
+      <li><a href="story.html">About Us</a></li>
+      <li><button class="nav-icon-button" aria-label="Search"><img src="film%20images/Magnifiying%20Glass%20icon.svg" alt="Search"></button></li>
+      <li><button class="nav-icon-button" aria-label="Cart"><img src="film%20images/Shopping%20Cart%20Icon.svg" alt="Cart"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="privacy-page-content">
+    <h1>Privacy Policy</h1>
+    <p class="page-intro">Last updated: July 30, 2026</p>
+
+    <section class="policy-section">
+      <p>This Privacy Policy describes how ClubHausCars (the "Site", "we", "us", or "our") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from clubhauscars.com (the "Site") or otherwise communicate with us regarding the Site (collectively, the "Services"). For purposes of this Privacy Policy, "you" and "your" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.</p>
+      <p>Please read this Privacy Policy carefully.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time, including to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will post the revised Privacy Policy on the Site, update the "Last updated" date and take any other steps required by applicable law.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>How We Collect and Use Your Personal Information</h2>
+      <p>To provide the Services, we collect and have collected over the past 12 months personal information about you from a variety of sources, as set out below. The information that we collect and use varies depending on how you interact with us.</p>
+      <p>In addition to the specific uses set out below, we may use information we collect about you to communicate with you, provide or improve the Services, comply with any applicable legal obligations, enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>What Personal Information We Collect</h2>
+      <p>The types of personal information we obtain about you depends on how you interact with our Site and use our Services. When we use the term "personal information", we are referring to information that identifies, relates to, describes or can be associated with you. The following sections describe the categories and specific types of personal information we collect.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Information We Collect Directly from You</h2>
+      <p>Information that you directly submit to us through our Services may include:</p>
+      <p>Contact details including your name, address, phone number, and email.</p>
+      <p>Order information including your name, billing address, shipping address, payment confirmation, email address, and phone number.</p>
+      <p>Account information including your username, password, security questions and other information used for account security purposes.</p>
+      <p>Customer support information including the information you choose to include in communications with us, for example, when sending a message through the Services.</p>
+      <p>Some features of the Services may require you to directly provide us with certain information about yourself. You may elect not to provide this information, but doing so may prevent you from using or accessing these features.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Information We Collect about Your Usage</h2>
+      <p>We may also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, pixels and similar technologies ("Cookies"). Usage Data may include information about how you access and use our Site and your account, including device information, browser information, information about your network connection, your IP address and other information regarding your interaction with the Services.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Information We Obtain from Third Parties</h2>
+      <p>Finally, we may obtain information about you from third parties, including from vendors and service providers who may collect information on our behalf, such as:</p>
+      <p>Companies who support our Site and Services.</p>
+      <p>Our payment processors, who collect payment information (e.g., bank account, credit or debit card information, billing address) to process your payment in order to fulfill your orders and provide you with products or services you have requested, in order to perform our contract with you.</p>
+      <p>When you visit our Site, open or click on emails we send you, or interact with our Services or advertisements, we, or third parties we work with, may automatically collect certain information using online tracking technologies such as pixels, web beacons, software developer kits, third-party libraries, and cookies.</p>
+      <p>Any information we obtain from third parties will be treated in accordance with this Privacy Policy. Also see the section below, Third Party Websites and Links.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>How We Use Your Personal Information</h2>
+      <p>Marketing and Advertising. We may use your personal information for marketing and promotional purposes, such as to send marketing, advertising and promotional communications by email, text message or postal mail, and to show you advertisements for products or services. This may include using your personal information to better tailor the Services and advertising on our Site and other websites. If you are an EEA resident, the legal basis for these data processing activities is our legitimate interest in selling our products, according to Art. 6 (1) (f) GDPR.</p>
+      <p>Security and Fraud Prevention. We use your personal information to detect, investigate or take action regarding possible fraudulent, illegal or malicious activity. If you choose to use the Services and register an account, you are responsible for keeping your account credentials safe. We highly recommend that you do not share your username, password, or other access details with anyone else. If you believe your account has been compromised, please contact us immediately. If you are an EEA resident, the legal basis for these data processing activities is our legitimate interest in keeping our website secure for you and other customers, according to Art. 6 (1) (f) GDPR.</p>
+      <p>Communicating with You and Service Improvement. We use your personal information to provide you with customer support and improve our Services. This is in our legitimate interests in order to be responsive to you, to provide effective services to you, and to maintain our business relationship with you according to Art. 6 (1) (f) GDPR.</p>
+      <p>Like many websites, we use Cookies on our Site. For specific information about the Cookies that we use related to powering our store with GitHub, see https://www.github.com/legal/cookies. We use Cookies to power and improve our Site and our Services (including to remember your actions and preferences), to run analytics and better understand user interaction with the Services (in our legitimate interests to administer, improve and optimize the Services). We may also permit third parties and services providers to use Cookies on our Site to better tailor the services, products and advertising on our Site and other websites.</p>
+      <p>Most browsers automatically accept Cookies by default, but you can choose to set your browser to remove or reject Cookies through your browser controls. Please keep in mind that removing or blocking Cookies can negatively impact your user experience and may cause some of the Services, including certain features and general functionality, to work incorrectly or no longer be available. Additionally, blocking Cookies may not completely prevent how we share information with third parties such as our advertising partners.</p>
+      <p>Our website also recognizes the Global Privacy Control (GPC) signal, which enables you to opt-out of certain uses or disclosures of your information. If you notify us of your preference through GPC, we will treat such signal as a valid request to opt out of sharing / targeted advertising for the associated browser or device, and, if we are able to associate the device sending the signal to a GitHub account, we will apply the opt out request to the account as well. To learn more about Global Privacy Control, you can visit https://globalprivacycontrol.org/. Other than the Global Privacy Control, we do not recognize other “Do Not Track” signals that may be sent from your web browser or device.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>How We Disclose Personal Information</h2>
+      <p>In certain circumstances, we may disclose your personal information to third parties for contract fulfillment purposes, legitimate purposes and other reasons subject to this Privacy Policy. Such circumstances may include:</p>
+      <p>With vendors or other third parties who perform services on our behalf (e.g., IT management, payment processing, data analytics, customer support, cloud storage, fulfillment and shipping).</p>
+      <p>With business and marketing partners to provide services and advertise to you. Our business and marketing partners will use your information in accordance with their own privacy notices.</p>
+      <p>When you direct, request us or otherwise consent to our disclosure of certain information to third parties, such as to ship you products or through your use of social media widgets or login integrations, with your consent.</p>
+      <p>With our affiliates or otherwise within our corporate group, in our legitimate interests to run a successful business.</p>
+      <p>In connection with a business transaction such as a merger or bankruptcy, to comply with any applicable legal obligations (including to respond to subpoenas, search warrants and similar requests), to enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>User Generated Content</h2>
+      <p>The Services may enable you to post product reviews and other user-generated content. If you choose to submit user generated content to any public area of the Services, this content will be public and accessible by anyone.</p>
+      <p>We do not control who will have access to the information that you choose to make available to others, and cannot ensure that parties who have access to such information will respect your privacy or keep it secure. We are not responsible for the privacy or security of any information that you make publicly available, or for the accuracy, use or misuse of any information that you disclose or receive from third parties.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Third Party Websites and Links</h2>
+      <p>Our Site may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of such sites, including the accuracy, completeness, or reliability of information found on these sites. Information you provide on public or semi-public venues, including information you share on third-party social networking platforms may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use by us or by a third party. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators, except as disclosed on the Services.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Children's Data</h2>
+      <p>The Services are not intended to be used by children, and we do not knowingly collect any personal information about children. If you are the parent or guardian of a child who has provided us with their personal information, you may contact us using the contact details set out below to request that it be deleted.</p>
+      <p>As of the Effective Date of this Privacy Policy, we do not have actual knowledge that we “share” or “sell” (as those terms are defined in applicable law) personal information of individuals under 16 years of age.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Security and Retention of Your Information</h2>
+      <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee “perfect security.” In addition, any information you send to us may not be secure while in transit. We recommend that you do not use insecure channels to communicate sensitive or confidential information to us.</p>
+      <p>How long we retain your personal information depends on different factors, such as whether we need the information to maintain your account, to provide the Services, comply with legal obligations, resolve disputes or enforce other applicable contracts and policies.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Your Rights</h2>
+      <p>Depending on where you live, you may have some or all of the rights listed below in relation to your personal information. However, these rights are not absolute, may apply only in certain circumstances and, in certain cases, we may decline your request as permitted by law.</p>
+      <p><strong>Right to Access / Know:</strong> You may have a right to request access to personal information that we hold about you, including details relating to the ways in which we use and share your information.</p>
+      <p><strong>Right to Delete:</strong> You may have a right to request that we delete personal information we maintain about you.</p>
+      <p><strong>Right to Correct:</strong> You may have a right to request that we correct inaccurate personal information we maintain about you.</p>
+      <p><strong>Right of Portability:</strong> You may have a right to receive a copy of the personal information we hold about you and to request that we transfer it to a third party, in certain circumstances and with certain exceptions.</p>
+      <p><strong>Right to Opt out of Sale or Sharing or Targeted Advertising:</strong> You may have a right to direct us not to "sell" or "share" your personal information or to opt out of the processing of your personal information for purposes considered to be "targeted advertising", as defined in applicable privacy laws. Please note that if you visit our Site with the Global Privacy Control opt-out preference signal enabled, depending on where you are, we will automatically treat this as a request to opt-out of the "sale" or "sharing" of information for the device and browser that you use to visit the Site.</p>
+      <p><strong>Restriction of Processing:</strong> You may have the right to ask us to stop or restrict our processing of personal information.</p>
+      <p><strong>Withdrawal of Consent:</strong> Where we rely on consent to process your personal information, you may have the right to withdraw this consent.</p>
+      <p><strong>Appeal:</strong> You may have a right to appeal our decision if we decline to process your request. You can do so by replying directly to our denial.</p>
+      <p><strong>Managing Communication Preferences:</strong> We may send you promotional emails, and you may opt out of receiving these at any time by using the unsubscribe option displayed in our emails to you. If you opt out, we may still send you non-promotional emails, such as those about your account or orders that you have made.</p>
+      <p>You may exercise any of these rights where indicated on our Site or by contacting us using the contact details provided below.</p>
+      <p>We will not discriminate against you for exercising any of these rights. We may need to collect information from you to verify your identity, such as your email address or account information, before providing a substantive response to the request. In accordance with applicable laws, you may designate an authorized agent to make requests on your behalf to exercise your rights. Before accepting such a request from an agent, we will require that the agent provide proof you have authorized them to act on your behalf, and we may need you to verify your identity directly with us. We will respond to your request in a timely manner as required under applicable law.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Complaints</h2>
+      <p>If you have complaints about how we process your personal information, please contact us using the contact details provided below. If you are not satisfied with our response to your complaint, depending on where you live you may have the right to appeal our decision by contacting us using the contact details set out below, or lodge your complaint with your local data protection authority. For the EEA, you can find a list of the responsible data protection supervisory authorities here.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>International Users</h2>
+      <p>Please note that we may transfer, store and process your personal information outside the country you live in. Your personal information is also processed by staff and third party service providers and partners in these countries.</p>
+      <p>If we transfer your personal information out of Europe, we will rely on recognized transfer mechanisms like the European Commission's Standard Contractual Clauses, or any equivalent contracts issued by the relevant competent authority of the UK, as relevant, unless the data transfer is to a country that has been determined to provide an adequate level of protection.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>Contact</h2>
+      <p>Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call or email us at info@clubhauscars.com.</p>
+      <p>For the purpose of applicable data protection laws and if not explicitly stated otherwise, we are the data controller of your personal information.</p>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Produced by<br>ClubHausCars®</h3>
+      <p>If you need any info that you can't find elsewhere, contact me directly at:</p>
+      <p>info@clubhauscars.com</p>
+      <p class="footer-thanks">Thank you for stopping by our store!</p>
+    </div>
+    <div class="footer-column">
+      <h3>We're here to help!</h3>
+      <ul>
+        <li><a href="story.html">About Us</a></li>
+        <li><a class="size-care-link" href="size-care-guide.html">Size &amp; Care Guide</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-column footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Sign up to hear about our sales and events!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your Email">
+        <button type="submit">→</button>
+      </form>
+      <div id="newsletter-message" class="newsletter-message" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-policies">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-social">
+      <a href="#"><img src="film%20images/discord%20icon.svg" alt="Discord"></a>
+      <a href="#"><img src="film%20images/facebook%20icon.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/clubhauscars/" target="_blank" rel="noreferrer"><img src="film%20images/instagram%20icon.svg" alt="Instagram"></a>
+    </div>
+  </div>
+</footer>
+
+<script src="site-ui.js"></script>
+<script>
+const header = document.querySelector('.site-header');
+const logo = document.querySelector('.site-logo img');
+window.addEventListener('scroll', () => {
+  const isScrolled = window.scrollY > 20;
+  header.classList.toggle('scrolled', isScrolled);
+  if (logo) logo.src = isScrolled ? 'film%20images/Logo%20White.svg' : 'film%20images/Logo%20Black.svg';
+});
+
+// FAQ accordion behavior (only one open at a time)
+const faqButtons = document.querySelectorAll('.faq-item');
+faqButtons.forEach(button => {
+  const panel = document.getElementById(button.getAttribute('aria-controls'));
+  if (!panel) return;
+  panel.style.display = 'none';
+
+  button.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    faqButtons.forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const p = document.getElementById(btn.getAttribute('aria-controls'));
+      if (p) p.style.display = 'none';
+    });
+    if (!isOpen) {
+      button.setAttribute('aria-expanded', 'true');
+      panel.style.display = 'block';
+    }
+  });
+
+  button.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); button.click(); }
+  });
+});
+
+// newsletter submit handler
+const newsletterForm = document.querySelector('.newsletter-form');
+const newsletterMessage = document.getElementById('newsletter-message');
+if (newsletterForm && newsletterMessage) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = newsletterForm.querySelector('input[type="email"]');
+    const email = input ? input.value.trim() : '';
+    if (email) {
+      newsletterMessage.textContent = 'Thanks for subscribing!';
+      input.value = '';
+    } else {
+      newsletterMessage.textContent = 'Please enter a valid email.';
+    }
+  });
+}
+
+</script>
+</body>
+</html>

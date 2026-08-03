@@ -58,8 +58,8 @@ button{font:inherit;}
 .faq-panel p{margin:0 0 18px;}
 .faq-panel h4{margin-top:22px;margin-bottom:8px;}
 .newsletter-message{margin-top:18px;color:var(--pale-cornflower);font-weight:700}
-.shop-divider{background:rgba(37,37,37,.92);padding:24px 20px;}
-.shop-divider .section-title{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--white);margin:0;transition:color .2s ease;}
+.shop-divider{background-image:url('./film images/gradient.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;padding:24px 20px;}
+.shop-divider .section-title{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--white);margin:0;text-transform:uppercase;transition:color .2s ease;}
 .shop-divider .section-title:hover{color:var(--pale-cornflower);}
 .shop-divider .section-title::after{display:none;}
 .shop-section{padding:80px 4% 100px;}

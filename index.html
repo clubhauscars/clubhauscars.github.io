@@ -30,7 +30,7 @@ button{font:inherit;}
 .site-logo img{height:48px;transition:opacity .2s ease;}
 .primary-navigation>ul{display:flex;align-items:center;gap:40px;list-style:none;}
 .primary-navigation a{color:var(--nero);text-decoration:none;font-size:16px;font-weight:600;letter-spacing:.01em;}
-.primary-navigation a:hover{opacity:.85;}
+.primary-navigation a:hover{color:var(--shocking-orange);}
 .dropdown{position:relative;}
 .dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:var(--placebo);min-width:220px;border:1px solid rgba(37,37,37,.08);border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.14);overflow:hidden;z-index:100;}
 .dropdown:hover .dropdown-menu{display:block;}
@@ -44,6 +44,7 @@ button{font:inherit;}
 .site-header.scrolled .dropdown-menu a{color:var(--nero);}
 .site-header.scrolled .dropdown-menu a:hover{color:var(--white);}
 .site-header.scrolled .nav-icon-button img{filter:invert(1);}
+.site-header.scrolled .site-logo:hover img{filter:brightness(0) saturate(100%) sepia(100%) hue-rotate(9deg) saturate(550%) contrast(0.95);}
 .hero-section{height:calc(100vh - 80px);background:url('film%20images/film%2014.PNG');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px;}
 .hero-content h1{font-family:'Liu Jian Mao Cao',cursive;font-size:350px;color:var(--white);font-weight:400;line-height:0.9;margin-bottom:18px;text-shadow:-3px -3px 0 var(--shocking-orange),3px -3px 0 var(--shocking-orange),-3px 3px 0 var(--shocking-orange),3px 3px 0 var(--shocking-orange);-webkit-text-stroke:0;text-stroke:0;}
 .hero-button{display:inline-block;margin-top:20px;padding:16px 36px;background:var(--pale-cornflower);color:var(--nero);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;border:2px solid var(--dusk);border-radius:0;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
@@ -55,7 +56,7 @@ button{font:inherit;}
 .faq-description{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 10px;max-width:720px;font-weight:400;text-align:center;}
 .faq-time{color:var(--machine-gun-metal);font-size:1.2rem;line-height:1.9;margin:0 auto 40px;max-width:720px;font-weight:400;text-align:center;}
 .faq-list{background:var(--placebo);border:1px solid var(--placebo);border-radius:0;overflow:hidden;}
-.faq-item{appearance:none;-webkit-appearance:none;border:0;background:transparent;width:100%;text-align:left;padding:24px 26px;color:var(--nero);font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-bottom:1px solid rgba(0,0,0,0.06);}
+.faq-item{appearance:none;-webkit-appearance:none;border:0;background:transparent;width:100%;text-align:left;padding:24px 26px;color:var(--nero);font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:400;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-bottom:1px solid rgba(0,0,0,0.06);}
 .faq-item:hover{background:var(--placebo);}
 .faq-item span{font-size:1.4rem;color:var(--nero);transition:transform .2s ease;}
 .faq-item:focus{outline:2px solid var(--pale-cornflower);outline-offset:2px;border-radius:2px;}
@@ -67,7 +68,7 @@ button{font:inherit;}
 .newsletter-message{margin-top:18px;color:var(--pale-cornflower);font-weight:700}
 .shop-divider{background:rgba(37,37,37,.92);padding:24px 20px;}
 .shop-divider .section-title{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--white);margin:0;transition:color .2s ease;}
-.shop-divider .section-title:hover{color:var(--pale-cornflower);}
+.shop-divider .section-title:hover{color:var(--shocking-orange);}
 .shop-divider .section-title::after{display:none;}
 .shop-section{padding:80px 4% 100px;}
 .features-section,.about-section{padding:100px 8%;}
@@ -80,6 +81,8 @@ button{font:inherit;}
 .gallery-item::after{content:'View';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'DM Serif Display',serif;font-size:1.2rem;opacity:0;transition:opacity .25s ease,transform .25s ease;background:rgba(0,0,0,0.15);}
 .gallery-item:hover img{filter:brightness(0.9);transform:scale(1.02);}
 .gallery-item:hover::after{opacity:1;transform:translateY(-2px);}
+.shop-section .gallery-item::after{content:'';}
+.shop-section .gallery-item:hover::after{opacity:0;}
 .features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;}
 .feature-card{background:var(--white);padding:30px;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.08);}
 .feature-card h2{font-family:'DM Serif Display',serif;margin-bottom:12px;}
@@ -93,38 +96,43 @@ button{font:inherit;}
 .footer-column h3{color:white;margin-bottom:24px;font-size:1.2rem;line-height:1.4;}
 .footer-column:first-child h3{font-size:3rem;line-height:1.05;margin-bottom:24px;}
 .footer-column p,.footer-column li{color:var(--placebo);margin-bottom:16px;}
+.footer-column a{color:var(--placebo);text-decoration:none;}
+.footer-column a:hover{color:var(--shocking-orange);}
 .footer-column ul{list-style:none;padding:0;}
 .footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
 .footer-newsletter{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:40px 36px;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16);width:100%;}
 .footer-newsletter h3{font-size:1.4rem;margin-bottom:18px;}
 .footer-newsletter p{color:rgba(255,255,255,.85);font-size:0.98rem;line-height:1.8;margin-bottom:28px;}
-.newsletter-form{display:flex;gap:12px;flex-wrap:wrap;}
-.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);background:var(--white);color:var(--nero);}
+.newsletter-form{display:flex;gap:0;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);border-right:0;background:var(--white);color:var(--nero);}
 .newsletter-form input::placeholder{color:var(--machine-gun-metal);}
-.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;}
+.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;border-left:1px solid rgba(255,255,255,.18);}
 .newsletter-form button:hover{background:rgba(255,255,255,.34);transform:translateY(-1px);}
 .footer-divider{height:1px;background:rgba(255,255,255,.12);margin:56px 0;}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .footer-policies,.footer-social{display:flex;gap:34px;align-items:center;}
+.footer-policies a{transition:color .2s ease;}
+.footer-policies a:hover{color:var(--shocking-orange);}
 .footer-social a{display:inline-flex;align-items:center;justify-content:center;}
 .footer-social img{width:40px;height:40px;display:block;}
 .footer-social a:nth-child(2) img{width:36px;height:36px;}
 .footer-social a:nth-child(3) img{width:44px;height:44px;}
-@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.features-grid,.gallery-grid{grid-template-columns:1fr;}.features-section,.about-section,.gallery-section{padding:60px 6%;}.hero-content h1{font-size:clamp(3.6rem,15vw,6rem);}}
+@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.features-grid,.gallery-grid{grid-template-columns:1fr;}.features-section,.about-section,.gallery-section{padding:60px 6%;}.hero-content .home-hero-title{font-size:clamp(5rem,24vw,6.5rem);}.hero-content h1:not(.home-hero-title){font-size:clamp(3.6rem,15vw,6rem);}}
 </style>
+<link rel="stylesheet" href="site-ui.css">
 </head>
 <body>
 <header class="site-header">
 <div class="site-logo"><img src="film%20images/Logo%20Black.svg" alt="Club Haus Cars Logo"></div>
 <nav class="primary-navigation">
 <ul>
-<li class="dropdown"><a href="#prints">Prints</a>
+<li class="dropdown"><a href="shop.html">Prints</a>
 <ul class="dropdown-menu">
-<li><a href="#glossy-prints">Glossy Prints</a></li>
-<li><a href="#matte-prints">Matte Prints</a></li>
+<li><a href="shop.html">Glossy Prints</a></li>
+<li><a href="shop.html">Matte Prints</a></li>
 </ul>
 </li>
-<li><a href="#about-us">About Us</a></li>
+<li><a href="story.html">About Us</a></li>
 <li><button class="nav-icon-button" aria-label="Search"><img src="film%20images/Magnifiying%20Glass%20icon.svg" alt="Search"></button></li>
 <li><button class="nav-icon-button" aria-label="Cart"><img src="film%20images/Shopping%20Cart%20Icon.svg" alt="Cart"></button></li>
 </ul>
@@ -133,12 +141,12 @@ button{font:inherit;}
 <main>
 <section class="hero-section">
 <div class="hero-content">
-<h1>ClubHaus</h1>
-<a href="#about-us" class="hero-button">Our Story</a>
+<h1 class="home-hero-title">ClubHaus</h1>
+<a href="story.html" class="hero-button">Our Story</a>
 </div>
 </section>
 <section class="shop-divider">
-<h2 class="section-title">Shop All Prints</h2>
+<h2 class="section-title"><a href="shop.html">SHOP ALL PRINTS</a></h2>
 </section>
 <section class="shop-section">
 <div class="gallery-grid">
@@ -157,7 +165,7 @@ button{font:inherit;}
 <div class="hero-section" style="background:url('film%20images/digital%201.jpg');background-size:cover;background-position:center;">
 <div class="hero-content">
 <h2 class="section-title events-title">Events</h2>
-<a href="#" class="hero-button">Book me for an event</a>
+<a href="book-event.html" class="hero-button">Book me for an event</a>
 </div>
 </div>
 </section>
@@ -226,9 +234,9 @@ button{font:inherit;}
 <div class="footer-column">
 <h3>We're here to help!</h3>
 <ul>
-<li>About Us</li>
-<li>Size & Care Guide</li>
-<li>FAQ</li>
+<li><a href="story.html">About Us</a></li>
+<li><a class="size-care-link" href="size-care-guide.html">Size &amp; Care Guide</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
 </ul>
 </div>
 <div class="footer-column footer-newsletter">
@@ -244,9 +252,8 @@ button{font:inherit;}
 <div class="footer-divider"></div>
 <div class="footer-bottom">
 <div class="footer-policies">
-<span>Terms</span>
-<span>Privacy</span>
-<span>Cookies</span>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy Policy</a>
 </div>
 <div class="footer-social">
 <a href="#"><img src="film%20images/discord%20icon.svg" alt="Discord"></a>
@@ -255,6 +262,7 @@ button{font:inherit;}
 </div>
 </div>
 </footer>
+<script src="site-ui.js"></script>
 <script>
 const header = document.querySelector('.site-header');
 const logo = document.querySelector('.site-logo img');

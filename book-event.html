@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Me for an Event | ClubHausCars</title>
+<style>
+@font-face { font-family:'Montserrat'; src:url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'DM Serif Display'; src:url('fonts/DMSerifDisplay-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Liu Jian Mao Cao'; src:url('fonts/LiuJianMaoCao-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+:root{
+--nero:#252525;
+--placebo:#E6E6E6;
+--white:#FFFFFF;
+--fur-white:#F3F2F0;
+--machine-gun-metal:#454545;
+--pale-cornflower:#B0CEE2;
+--dusk:#45586C;
+--shocking-orange:#E95D2C;
+--roof-terracotta:#A63E1B;
+--ashlite:#A7A39C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--nero);min-height:100vh;display:flex;flex-direction:column;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;}
+.site-header{position:sticky;top:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(37,37,37,0);transition:background .3s ease,backdrop-filter .3s ease;}
+.site-header.scrolled{background:rgba(37,37,37,0.88);backdrop-filter:blur(12px);}
+.site-header.scrolled .primary-navigation a,
+.site-header.scrolled .nav-icon-button{color:var(--white);}
+.site-header.scrolled .dropdown > a{color:var(--white);}
+.site-header.scrolled .dropdown-menu a{color:var(--nero);}
+.site-header.scrolled .dropdown-menu a:hover{color:var(--white);}
+.site-header.scrolled .nav-icon-button img{filter:invert(1);}
+.site-header.scrolled .site-logo:hover img{filter:brightness(0) saturate(100%) sepia(100%) hue-rotate(9deg) saturate(550%) contrast(0.95);}
+.site-logo img{height:48px;transition:filter .2s ease,opacity .2s ease;}
+.primary-navigation>ul{display:flex;align-items:center;gap:40px;list-style:none;}
+.primary-navigation a{color:var(--nero);text-decoration:none;font-size:16px;font-weight:600;letter-spacing:.01em;}
+.primary-navigation a:hover{color:var(--shocking-orange);}
+.dropdown{position:relative;}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;list-style:none;background:var(--placebo);min-width:220px;border:1px solid rgba(37,37,37,.08);border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.14);overflow:hidden;z-index:100;}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;color:var(--nero);padding:14px 18px;font-weight:600;transition:background .2s ease,color .2s ease;}
+.dropdown-menu a:hover{background:var(--dusk);color:var(--white);}
+.nav-icon-button{background:none;border:none;color:var(--nero);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.nav-icon-button img{display:block;height:26px;width:auto;transition:filter .3s ease,height .3s ease;}
+.story-hero{padding:118px 0 120px;background:linear-gradient(180deg,var(--fur-white) 0%,var(--placebo) 100%);}
+.story-grid{display:grid;grid-template-columns:1.03fr 0.97fr;gap:40px;align-items:start;max-width:1320px;margin:0 auto;padding:0 32px;}
+.story-visual{display:flex;flex-direction:column;gap:18px;}
+.story-image{position:relative;min-height:640px;background:url('film%20images/film%2037.jpg') center/cover no-repeat;border:1px solid rgba(69,88,108,.15);box-shadow:0 24px 60px rgba(37,37,37,.12);}
+.story-card{background:linear-gradient(180deg,var(--white) 0%,var(--fur-white) 100%);padding:56px 50px;box-shadow:0 24px 60px rgba(37,37,37,.11);border:1px solid rgba(69,88,108,.14);}
+.story-card h1{font-family:'DM Serif Display',serif;font-size:clamp(2.7rem,4.5vw,4rem);margin-bottom:20px;color:var(--nero);line-height:1.05;font-weight:400;}
+.story-card h1::after{content:'';display:block;width:110px;height:3px;background:var(--shocking-orange);margin-top:16px;}
+.story-card h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);margin:30px 0 14px;color:var(--nero);line-height:1.2;font-weight:400;}
+.story-card h3{font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,2.3vw,1.8rem);margin:24px 0 10px;color:var(--dusk);line-height:1.3;font-weight:400;}
+.story-card p{color:var(--machine-gun-metal);font-size:1.03rem;line-height:1.84;margin-bottom:18px;font-weight:400;}
+.story-card p:last-child{margin-bottom:0;}
+.enquiry-section{margin-top:38px;padding-top:34px;border-top:1px solid rgba(69,88,108,0.2);}
+.enquiry-section label{display:block;color:var(--nero);font-weight:700;margin-bottom:8px;}
+.form-field{margin-bottom:18px;}
+.enquiry-section input,
+.enquiry-section select,
+.enquiry-section textarea{width:100%;border:1px solid rgba(69,88,108,0.35);background:var(--white);padding:12px 14px;color:var(--nero);}
+.enquiry-section textarea{min-height:132px;resize:vertical;}
+.enquiry-section small{display:block;color:var(--machine-gun-metal);margin-top:8px;line-height:1.6;}
+.enquiry-submit{display:inline-block;margin-top:6px;padding:14px 24px;background:var(--pale-cornflower);color:var(--nero);text-decoration:none;font-weight:700;border:2px solid var(--dusk);cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;}
+.enquiry-submit:hover{background:var(--shocking-orange);border-color:var(--roof-terracotta);color:var(--white);transform:translateY(-1px);}
+.enquiry-note{margin-top:16px;font-style:italic;color:var(--machine-gun-metal);}
+.event-gallery{display:flex;flex-direction:column;gap:12px;}
+.event-gallery img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;}
+.site-footer{background:var(--nero);color:var(--placebo);padding:72px 8%;font-family:'Montserrat',sans-serif;}
+@media (max-width: 980px){.story-grid{grid-template-columns:1fr;gap:32px;padding:0 20px;}.story-image{min-height:440px;}.story-card{padding:40px 30px;}.event-gallery{flex-direction:row;}}
+.footer-container{display:grid;grid-template-columns:2.5fr 1fr 3fr;gap:48px;}
+.footer-column h3{color:white;margin-bottom:24px;font-size:1.2rem;line-height:1.4;}
+.footer-column:first-child h3{font-size:3rem;line-height:1.05;margin-bottom:24px;}
+.footer-column p,.footer-column li{color:var(--placebo);margin-bottom:16px;}
+.footer-column a{color:var(--placebo);text-decoration:none;}
+.footer-column a:hover{color:var(--shocking-orange);}
+.footer-column ul{list-style:none;padding:0;}
+.footer-thanks{font-family:'DM Serif Display',serif;font-size:24px;margin-top:48px;}
+.footer-newsletter{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:40px 36px;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16);width:100%;}
+.footer-newsletter h3{font-size:1.4rem;margin-bottom:18px;}
+.footer-newsletter p{color:rgba(255,255,255,.85);font-size:0.98rem;line-height:1.8;margin-bottom:28px;}
+.newsletter-form{display:flex;gap:0;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:220px;padding:18px 20px;border-radius:0;border:1px solid rgba(255,255,255,.18);border-right:0;background:var(--white);color:var(--nero);}
+.newsletter-form input::placeholder{color:var(--machine-gun-metal);}
+.newsletter-form button{padding:0 24px;min-width:64px;border:none;border-radius:0;background:rgba(255,255,255,.2);color:var(--white);font-size:1.1rem;cursor:pointer;transition:background .2s ease,transform .2s ease;border-left:1px solid rgba(255,255,255,.18);}
+.newsletter-form button:hover{background:rgba(255,255,255,.34);transform:translateY(-1px);}
+.footer-divider{height:1px;background:rgba(255,255,255,.12);margin:56px 0;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-policies,.footer-social{display:flex;gap:34px;align-items:center;}
+.footer-policies a{transition:color .2s ease;}
+.footer-policies a:hover{color:var(--shocking-orange);}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;}
+.footer-social img{width:40px;height:40px;display:block;}
+.footer-social a:nth-child(2) img{width:36px;height:36px;}
+.footer-social a:nth-child(3) img{width:44px;height:44px;}
+@media (max-width: 840px){.site-header{padding:0 20px;}.primary-navigation>ul{gap:22px;}.primary-navigation a{font-size:15px;}.nav-icon-button img{height:22px;}.footer-container{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;align-items:flex-start;}.footer-policies{gap:20px;}.event-gallery{flex-direction:column;}}
+</style>
+<link rel="stylesheet" href="site-ui.css">
+</head>
+<body>
+<header class="site-header">
+<div class="site-logo"><a href="index.html"><img src="film%20images/Logo%20Black.svg" alt="Club Haus Cars Logo"></a></div>
+<nav class="primary-navigation">
+<ul>
+<li class="dropdown"><a href="shop.html">Prints</a>
+<ul class="dropdown-menu">
+<li><a href="shop.html">Glossy Prints</a></li>
+<li><a href="shop.html">Matte Prints</a></li>
+</ul>
+</li>
+<li><a href="story.html">About Us</a></li>
+<li><button class="nav-icon-button" aria-label="Search"><img src="film%20images/Magnifiying%20Glass%20icon.svg" alt="Search"></button></li>
+<li><button class="nav-icon-button" aria-label="Cart"><img src="film%20images/Shopping%20Cart%20Icon.svg" alt="Cart"></button></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="story-hero">
+<div class="story-grid">
+<div class="story-visual">
+<div class="story-image"></div>
+<section class="event-gallery" aria-label="Event Film Gallery">
+<img src="film%20images/film%2038.jpg" alt="Film sample 38">
+<img src="film%20images/film%2039.jpg" alt="Film sample 39">
+<img src="film%20images/film%2040.jpg" alt="Film sample 40">
+</section>
+</div>
+<div class="story-card">
+<h1>Book Me</h1>
+<p>Film has a way of preserving moments that feels honest, timeless, and full of character. Every frame is shot with intention, creating photographs that you'll want to revisit for years to come.</p>
+<p>Whether it's your wedding day, a packed concert, your pride and joy on four wheels, or a celebration with friends, I'd love to tell your story on film.</p>
+
+<h3>Weddings &amp; Engagements</h3>
+<p>From intimate ceremonies to full wedding celebrations, I'll capture the genuine moments, quiet details, and everything in between with the timeless look of 35mm film.</p>
+
+<h3>Parties &amp; Celebrations</h3>
+<p>Birthdays, anniversaries, graduations, private events, and special occasions. My focus is on natural, candid moments that reflect the atmosphere of the day.</p>
+
+<h3>Live Music &amp; Nightlife</h3>
+<p>Gigs, concerts, festivals, DJ sets, and club nights. Film complements live music with its raw texture, rich colours, and nostalgic feel.</p>
+
+<h3>Automotive</h3>
+<p>Whether it's a weekend cruise, a car meet, a freshly finished build, or a personal shoot with your vehicle, I'll create cinematic film photographs that showcase both the car and the story behind it.</p>
+
+<h2>Let's Make Something Together</h2>
+<p>If you're interested in booking a shoot or having me photograph your event, I'd love to hear from you.</p>
+<p>Fill out the enquiry form below with a few details about your event or shoot-including the date, location, and what you're looking for-and I'll get back to you as soon as I can to chat about your vision and availability.</p>
+
+<section class="enquiry-section" aria-label="Event Enquiry Form">
+<form>
+<div class="form-field">
+<label for="enquiry-name">Name *</label>
+<input id="enquiry-name" name="name" type="text" required>
+</div>
+<div class="form-field">
+<label for="enquiry-email">Email *</label>
+<input id="enquiry-email" name="email" type="email" required>
+</div>
+<div class="form-field">
+<label for="enquiry-service">Service *</label>
+<select id="enquiry-service" name="service" required>
+<option value="" selected disabled>Select a service</option>
+<option>Wedding / Engagement</option>
+<option>Party / Celebration</option>
+<option>Live Music</option>
+<option>Automotive</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-field">
+<label for="enquiry-date">Event Date *</label>
+<input id="enquiry-date" name="event-date" type="date" required>
+</div>
+<div class="form-field">
+<label for="enquiry-location">Location *</label>
+<input id="enquiry-location" name="location" type="text" required>
+</div>
+<div class="form-field">
+<label for="enquiry-details">Tell me about your shoot *</label>
+<textarea id="enquiry-details" name="details" required placeholder="Share a few details about your event or vision."></textarea>
+</div>
+<button class="enquiry-submit" type="submit">Submit</button>
+<p class="enquiry-note">I'll get back to you within 24-48 hours.</p>
+</form>
+</section>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-column">
+<h3>Produced by<br>ClubHausCars&#174;</h3>
+<p>If you need any info that you can't find elsewhere, contact me directly at:</p>
+<p>info@clubhauscars.com</p>
+<p class="footer-thanks">Thank you for stopping by our store!</p>
+</div>
+<div class="footer-column">
+<h3>We're here to help!</h3>
+<ul>
+<li><a href="story.html">About Us</a></li>
+<li><a class="size-care-link" href="size-care-guide.html">Size &amp; Care Guide</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column footer-newsletter">
+<h3>Newsletter</h3>
+<p>Sign up to hear about our sales and events!</p>
+<form class="newsletter-form">
+<input type="email" placeholder="Your Email">
+<button type="submit">&rarr;</button>
+</form>
+<div id="newsletter-message" class="newsletter-message" aria-live="polite"></div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+<div class="footer-policies">
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy Policy</a>
+</div>
+<div class="footer-social">
+<a href="#"><img src="film%20images/discord%20icon.svg" alt="Discord"></a>
+<a href="#"><img src="film%20images/facebook%20icon.svg" alt="Facebook"></a>
+<a href="https://www.instagram.com/clubhauscars/" target="_blank" rel="noreferrer"><img src="film%20images/instagram%20icon.svg" alt="Instagram"></a>
+</div>
+</div>
+</footer>
+<script src="site-ui.js"></script>
+<script>
+const header = document.querySelector('.site-header');
+const logo = document.querySelector('.site-logo img');
+window.addEventListener('scroll', () => {
+  const isScrolled = window.scrollY > 20;
+  header.classList.toggle('scrolled', isScrolled);
+  if (logo) {
+    logo.src = isScrolled ? 'film%20images/Logo%20White.svg' : 'film%20images/Logo%20Black.svg';
+  }
+});
+</script>
+</body>
+</html>
